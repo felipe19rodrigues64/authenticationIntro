@@ -1,0 +1,71 @@
+version: "3.3"
+services:
+  # nginx
+  nginx:
+    build: nginx/
+    ports:
+      - "8181:8181"
+    links:
+      - web1:app_1
+      - web2:app_2
+      - web3:app_3
+      - web4:app_4
+    networks:
+      - my_net
+  # mongo DB
+  mongo:
+    image: mongo:latest
+    ports: [
+      "27017:27017"
+    ]
+    volumes:
+      - /data/db:/data/db
+    environment:
+      - MONGODB_USER=felipe19rodrigues64
+      - MONGODB_PASSWORD=folR272812
+      - MONGODB_DATABASE=fulltime
+      - MONGODB_ROOT_PASSWORD=folR272812
+    networks:
+      - my_net
+
+  web1:
+    build: .
+    volumes:
+      - ./:/app
+    depends_on:
+      - mongo  
+    networks:
+      - my_net
+      #ports: ["3000:3000"]
+  web2:
+    build: .
+    volumes:
+      - ./:/app
+    depends_on:
+      - mongo
+    networks:
+      - my_net
+      #ports: ["3000:3000"]
+  web3:
+    build: .
+    volumes:
+      - ./:/app
+    depends_on:
+      - mongo
+    networks:
+      - my_net
+      #ports: ["3000:3000"]
+  web4:
+    build: .
+    volumes:
+      - ./:/app
+    depends_on:
+      - mongo
+    networks:
+      - my_net
+      #ports: ["3000:3000"]
+
+networks:
+  my_net:
+    driver: bridge
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Editar Usuário</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="container">
+      <h3><a href="/users">Lista Usuários</a></h3>
+      <h1>Edita Funcionário</h1>
+      <form action="/users/update/<%= user._id%>" method="post">
+        <table>
+          <tbody>
+            <tr>
+              <td>Nome</td>
+              <td><input type="text" name="name" value="<%= user.name %>" /></td>
+            </tr>
+            <tr>
+              <td>Usuário</td>
+              <td><input type="text" name="userid" value="<%= user.userid %>" /></td>
+            </tr>
+            <tr>
+              <td>Senha</td>
+              <td><input type="text" name="password" value="<%= user.password %>" /></td>
+            </tr>
+            <tr>
+            <tr>
+              <td colspan="2"><button type="submit">Salvar</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </div>
+  </body>
+</html>
