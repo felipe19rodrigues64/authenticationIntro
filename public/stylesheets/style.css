@@ -1,10 +1,9 @@
 body {
   padding: 30px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  color: #555555;
+  color: #4d85ee;
   background-image: url("a.jpg");
-  background-color: #cccccc;
-}
+  background:#0a4981;}
 
 a {
   color: #00B7FF;
