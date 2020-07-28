@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lista de Usuários</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="container">
+      <h3><a href="/users/create">Novo</a></h3>
+      <h1>Lista de Usuários</h1>
+      <% if(users.length>0) { %>
+      <table class="list-table", border="1">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Usuário</th>
+            <!--<th>Endereço</th>-->
+          </tr>
+        </thead>
+        <tbody>
+
+          <% for(var i=0; i<users.length;i++) { %>
+            <tr>
+              <td><a href="/users/show/<%= users[i]._id%>"><%= users[i].name%></a></td>
+              <td><%= users[i].userid%></td>
+              <!--<td><%= users[i].address%></td>-->
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+      <% } else { %>
+        <div>Não há usuários cadastrados.</div>
+      <% } %>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lista de Funcionários</title>
+    <!--<link rel='stylesheet' href='/stylesheets/style.css' />-->
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+
+  </head>
+  <body>
+    <div class="container">
+      <h3><a href="/employees/create">Novo</a></h3><br>
+      <h4>Lista de Funcionários</h4>
+      <% if(employees.length>0) { %>
+      <table class="list-table" border="1">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Cargo</th>
+            <!--<th>Endereço</th>-->
+          </tr>
+        </thead>
+        <tbody>
+
+          <% for(var i=0; i<employees.length;i++) { %>
+            <tr>
+              <td><a href="/employees/show/<%= employees[i]._id%>"><%= employees[i].name%></a></td>
+              <td><%= employees[i].position%></td>
+              <!--<td><%= employees[i].address%></td>-->
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+      <% } else { %>
+        <div>Não há funcionários cadastrados.</div>
+      <% } %>
+    </div>
+  </body>
+</html>

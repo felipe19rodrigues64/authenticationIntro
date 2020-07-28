@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lista de Produtos</title>
+    <!--<link rel='stylesheet' href='/stylesheets/style.css' />-->
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+  </head>
+  <body>
+    <div class="container">
+      <h3><a href="/products/create">Novo</a></h3><br>
+      <h4>Lista de Produtos</h4>
+      <% if(products.length>0) { %>
+      <table class="list-table", border="1">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Produto</th>
+            <!--<th>Endereço</th>-->
+          </tr>
+        </thead>
+        <tbody>
+
+          <% for(var i=0; i<products.length;i++) { %>
+            <tr>
+              <td><a href="/products/show/<%= products[i]._id%>"><%= products[i].name%></a></td>
+              <td><%= products[i].productid%></td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+      <% } else { %>
+        <div>Não há produtos cadastrados.</div>
+      <% } %>
+    </div>
+  </body>
+</html>
