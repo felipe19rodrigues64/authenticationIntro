@@ -76,9 +76,10 @@ router.get('/profile', function (req, res, next) {
           var subtitle = 'Server-01'
           return res.send('<head><link href="css/style.css" rel="stylesheet" type="text/css" media="all" /></head>' +
             '<br><br>' +
+            '<h1>FullTime</h1><br><br>' +
             '<div class="container">' +
-            '<h4>Name: ' + user.username + 
-            '</h4>' + '<br><h4>Mail: ' +  user.email + 
+            '<h4>Bem vindo ' + user.username + 
+            '</h4>' + '<br><h4>email: ' +  user.email + 
             '</h4><br><a type="button" href="menu">Entrar</a><br><br><a type="button" href="/logout">Logout</a><br>' +
             '</div>')
         }
