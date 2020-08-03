@@ -61,8 +61,9 @@ productController.edit = function(req, res) {
 
 // Update an employee
 productController.update = function(req, res) {
-  Product.findByIdAndUpdate(req.params.id, { $set: { name: req.body.name, productid: req.body.productid, price:req.body.price}}, { new: true }, function (err, product) {
-    if (err) {
+  let nPreco = Number(req.body.price)
+  Product.findByIdAndUpdate(req.params.id, { $set: { name: req.body.name, productid: req.body.productid, price: req.body.price}}, { new: true }, function (err, product) {
+      if (err) {
       console.log(err);
       res.render("../views/products/edit", {product: req.body});
     }
