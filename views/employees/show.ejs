@@ -25,7 +25,7 @@
           </tr>
           <tr>
             <td>Salario</td>
-            <td>$<%= employee.salary %>/ano</td>
+            <td>$<%= employee.salary.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}) %></td>
           </tr>
         </tbody>
       </table>

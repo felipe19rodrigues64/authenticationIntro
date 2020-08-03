@@ -26,7 +26,8 @@
             </tr>
             <tr>
               <td>Salario</td>
-              <td><input type="number" name="salary" value="<%= employee.salary %>" /></td>
+              <td><input type="number" name="salary" value="<%= employee.salary.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}) %>" /></td>
+              <!-- .toLocaleString("pt-br", {style: "currency", currency: "BRL"}) -->
             </tr>
             <tr>
               <td colspan="2"><button type="submit">Salvar</button></td>
