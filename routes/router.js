@@ -93,8 +93,8 @@ router.get('/menu', function (req, res, next) {
     '<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />' +
     '</head><body><h1>FullTime</h1><br><br>' +
     '<div class="container">' +
-    '<h4><a href="/employees">Funcionários</a></h4>' +
-    '<h4><a href="/products">Produtos</a></h4>' +
+    '<h4><br><a href="/employees">Funcionários</a></h4><br>' +
+    '<h4><a href="/products">Produtos</a></h4><br>' +
     '</div></body></html>')
 });
 
