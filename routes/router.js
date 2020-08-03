@@ -45,7 +45,7 @@ router.post('/', function (req, res, next) {
   } else if (req.body.logemail && req.body.logpassword) {
     User.authenticate(req.body.logemail, req.body.logpassword, function (error, user) {
       if (error || !user) {
-        var err = new Error('Wrong email or password.');
+        var err = new Error('email ou password errados.');
         err.status = 401;
         return next(err);
       } else {
@@ -54,7 +54,7 @@ router.post('/', function (req, res, next) {
       }
     });
   } else {
-    var err = new Error('All fields required.');
+    var err = new Error('Preencha todos os campos.');
     err.status = 400;
     return next(err);
   }
