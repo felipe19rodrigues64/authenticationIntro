@@ -17,15 +17,15 @@ mongoose.Promise = global.Promise;
 
 
 //connect to MongoDB local
-mongoose.connect('mongodb://localhost/fulltime',{ useNewUrlParser: true })
+/* mongoose.connect('mongodb://localhost/fulltime',{ useNewUrlParser: true })
+  .then(() =>  console.log('MongoDB conectado'))
+  .catch((err) => console.error(err));
+ */
+//connect to MongoDB docker
+mongoose.connect('mongodb://mongo/fulltime',{ useNewUrlParser: true })
   .then(() =>  console.log('MongoDB conectado'))
   .catch((err) => console.error(err));
 
-//connect to MongoDB docker
-/*mongoose.connect('mongodb://mongo/fulltime',{ useNewUrlParser: true })
-  .then(() =>  console.log('MongoDB conectado'))
-  .catch((err) => console.error(err));
-*/
 var db = mongoose.connection;
 
 //handle mongo error

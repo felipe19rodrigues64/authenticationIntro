@@ -3,15 +3,6 @@ var router = express.Router();
 var User = require('../models/User');
 //var path = require('path');
 
-// GET route for reading data
-// router.get('/', function (req, res, next) {
-//   console.log("GET index.ejs");
-//   console.log(path.toString());
-//   console.log(__dirname.toString());
-//   return res.sendFile(path.join(__dirname + 'index'));
-// });
-
-
 //POST route for updating data
 router.post('/', function (req, res, next) {
   // confirm that user typed same password twice
@@ -68,13 +59,13 @@ router.get('/profile', function (req, res, next) {
         return next(error);
       } else {
         if (user === null) {
-          var err = new Error('Not authorized! Go back!');
+          var err = new Error('Não autorizado! Volte!');
           err.status = 400;
           return next(err);
         } else {
           var title = 'FullTime'
           var subtitle = 'Server-01'
-          return res.send('<head><link href="css/style.css" rel="stylesheet" type="text/css" media="all" /></head>' +
+          return res.send('<head><link href="/stylesheets/style.css" rel="stylesheet" type="text/css" media="all" /></head>' +
             '<br><br>' +
             '<h1>FullTime</h1><br><br>' +
             '<div class="container">' +
@@ -91,7 +82,7 @@ router.get('/profile', function (req, res, next) {
 
 router.get('/menu', function (req, res, next) {
   return res.send('<html><head><title>FullTime</title>' +
-    '<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />' +
+    '<link href="/stylesheets/style.css" rel="stylesheet" type="text/css" media="all" />' +
     '</head><body><h1>FullTime</h1><br><br>' +
     '<div class="container">' +
     '<h4><br><a href="/employees">Funcionários</a></h4><br>' +
