@@ -70,7 +70,7 @@ router.get('/profile', function (req, res, next) {
             '<h1>FullTime</h1><br><br>' +
             '<div class="container">' +
             '<h4>Bem vindo ' + user.username + 
-            '</h4>' + '<br><h4>email: ' +  user.email + 
+            '</h4>' + '<h4>email: ' +  user.email + 
             '</h4><br><a type="button" href="menu">Entrar</a><br><br><a type="button" href="/logout">Logout</a><br>' +
             '</div>')
         }
@@ -85,7 +85,7 @@ router.get('/menu', function (req, res, next) {
     '<link href="/stylesheets/style.css" rel="stylesheet" type="text/css" media="all" />' +
     '</head><body><h1>FullTime</h1><br><br>' +
     '<div class="container">' +
-    '<h4><br><a href="/employees">Funcionários</a></h4><br>' +
+    '<h4><br><a href="/employees">Funcionários</a></h4>' +
     '<h4><a href="/products">Produtos</a></h4><br>' +
     '</div></body></html>')
 });
